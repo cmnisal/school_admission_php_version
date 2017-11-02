@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+require "includes/config.php";
 session_start();
 if(isset($_SESSION['logged_in'])) {
     header("Location: includes/welcome.php");
