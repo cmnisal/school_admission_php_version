@@ -1,6 +1,9 @@
 <?php
 include("includes/config.php");
 session_start();
+if(isset($_SESSION['logged_in'])) {
+    header("Location: includes/welcome.php");
+}
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
@@ -18,9 +21,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // If result matched $myusername and $mypassword, table row must be 1 row
 
     if($count == 1) {
-        //session_register("myusername");
         $_SESSION['login_user'] = $myusername;
+        $_SESSION['logged_in']= true;
         header("location: includes/welcome.php");
+        echo "asfasf";
     }else {
         $error = "Your Login Name or Password is invalid";
         echo "<script type='text/javascript'>alert(\"$error\");</script>";

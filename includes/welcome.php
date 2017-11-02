@@ -1,5 +1,8 @@
 <?php
 include('session.php');
+if(!isset($_SESSION['logged_in'])) {
+    header("Location: ../index.php");
+}
 ?>
 <html">
 
@@ -9,7 +12,8 @@ include('session.php');
 
 <body>
 <h1>Welcome <?php echo $login_session; ?></h1>
-<h2><a href = "../index.php">Sign Out</a></h2>
+<h2><a href = "logout.php">Sign Out</a></h2>
+<?php echo implode(",", $_SESSION)  ?>
 </body>
 
 </html>
