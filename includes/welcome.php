@@ -2,7 +2,10 @@
 include('session.php');
 if(!isset($_SESSION['logged_in'])) {
     header("Location: ../index.php");
+}else{
+    header("Location: ../public/school_clerk.php");
 }
+
 ?>
 <html">
 

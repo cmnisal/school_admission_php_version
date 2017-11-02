@@ -1,5 +1,5 @@
 <?php
-include("includes/config.php");
+include "includes/config.php";
 session_start();
 if(isset($_SESSION['logged_in'])) {
     header("Location: includes/welcome.php");
@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-    $sql = "SELECT id FROM people WHERE username = '$myusername' and password = '$mypassword'";
+    $sql = "SELECT * FROM users WHERE username = '$myusername' and password =PASSWORD('$mypassword')";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
