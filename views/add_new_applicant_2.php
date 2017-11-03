@@ -15,12 +15,9 @@ $_SESSION['nationality'] = $_POST['nationality'];
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel = "stylesheet"
-          type = "text/css"
-          href = "../stylesheets/myStyle.css" />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/stylesheets/myStyle.css" />
+    <link rel = "stylesheet" type = "text/css" href = "public/xel/stylesheets/material.theme.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -70,5 +67,9 @@ $_SESSION['nationality'] = $_POST['nationality'];
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </div>
+
+<script src="../vendor/components/jquery/jquery.min.js"></script>
+<script src="./.public/xel/xel.min.js" ></script>
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

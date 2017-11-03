@@ -1,0 +1,13 @@
+{
+    "name": "root/school_admission_php_version",
+    "authors": [
+        {
+            "name": "Dasun Pubudumal",
+            "email": "dasun.15@cse.mrt.ac.lk"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "^3.3",
+        "components/jquery": "^3.2"
+    }
+}
