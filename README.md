@@ -10,6 +10,6 @@ Note: Since the file structure is now modularized a little bit, I have introduce
 
 * ``composer.json`` file is a manifest which records the 3rd party libraries used in the application (This is similar to ``package.json`` for NodeJs)
 
-Pull/clone the project and run ``composer install`` and you can run the application through a local Apach server as usual.
+Pull/clone the project and run ``composer install`` and you can run the application through a local Apache server as usual.
 
 
