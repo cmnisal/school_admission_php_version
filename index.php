@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE username = '$myusername' and password =PASSWORD('$mypassword')";
+    $sql = "SELECT * FROM system_user WHERE username = '$myusername' and password =PASSWORD('$mypassword')";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $active = $row['active'];
@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+
     <link rel = "stylesheet" type = "text/css" href = "public/stylesheets/myStyle.css" />
     <link rel = "stylesheet" type = "text/css" href = "public/xel/stylesheets/material.theme.css" />
 </head>

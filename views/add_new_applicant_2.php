@@ -1,11 +1,20 @@
 <?php
-
+require "includes/config.php";
 //finally, let's store our posted values in the session variables
 session_start();
-$_SESSION['first_name'] = $_POST['first_name'];
-$_SESSION['last_name'] = $_POST['last_name'];
-$_SESSION['dob'] = $_POST['dob'];
-$_SESSION['nationality'] = $_POST['nationality'];
+
+
+session_regenerate_id();
+$_SESSION['first_name']=mysqli_real_escape_string($db,$_POST['first_name']);;
+$_SESSION['last_name']=mysqli_real_escape_string($db,$_POST['last_name']);;
+$_SESSION['dob']=mysqli_real_escape_string($db,$_POST['dob']);;
+$_SESSION['nationality']=mysqli_real_escape_string($db,$_POST['nationality']);;
+if(!isset($_SESSION['login_user']))      // if there is no valid session
+{
+    header("Location: ../index.php");
+}elseif (!isset($_SESSION['first_name'],$_SESSION['last_name'],$_SESSION['dob'],$_SESSION['nationality'])){
+    header("Location: add_new_appicant.php");
+}
 
 ?>
 <html>
@@ -15,9 +24,9 @@ $_SESSION['nationality'] = $_POST['nationality'];
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel = "stylesheet" type = "text/css" href = "public/stylesheets/myStyle.css" />
-    <link rel = "stylesheet" type = "text/css" href = "public/xel/stylesheets/material.theme.css" />
+    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "../public/stylesheets/myStyle.css" />
+    <link rel = "stylesheet" type = "text/css" href = "../public/xel/stylesheets/material.theme.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -61,7 +70,7 @@ $_SESSION['nationality'] = $_POST['nationality'];
     </div>
     <div class="form-group">
         <label for="guardian_nic" class="left">Guardian NIC no:</label>
-        <input type="number" class="form-control" name="guardian_nics">V
+        <input type="number" class="form-control" name="guardian_nic">V
     </div>
     <div></div>
     <button type="submit" class="btn btn-default">Submit</button>

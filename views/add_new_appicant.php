@@ -1,3 +1,10 @@
+<?php session_start();
+//session_regenerate_id();
+if(!isset($_SESSION['login_user']))      // if there is no valid session
+{
+header("Location: ../index.php");
+}
+?>
 <html>
 <head>
     <title><?php
@@ -5,12 +12,12 @@
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel = "stylesheet"
           type = "text/css"
           href = "../stylesheets/myStyle.css" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
 </head>
 <body>
 <nav class="navbar navbar-inverse">

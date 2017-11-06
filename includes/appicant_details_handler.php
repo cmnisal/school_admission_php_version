@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: pavilion 15
- * Date: 02-Nov-17
- * Time: 8:56 PM
- */
+require "config.php";
+
+$religion=mysqli_real_escape_string($db,$_POST['religion']);
+$gender=mysqli_real_escape_string($db,$_POST['gender']);
+$guardian_nic=mysqli_real_escape_string($db,$_POST['guardian_nic']);
+
+
