@@ -24,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['login_user'] = $myusername;
         $_SESSION['logged_in']= true;
         header("location: includes/welcome.php");
-        echo "asfasf";
     }else {
         $error = "Your Login Name or Password is invalid";
         echo "<script type='text/javascript'>alert(\"$error\");</script>";

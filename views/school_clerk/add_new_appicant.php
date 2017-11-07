@@ -31,7 +31,7 @@ header("Location: ../index.php");
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="school_clerk.php">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                 </a>
@@ -227,11 +227,11 @@ header("Location: ../index.php");
 
 <div class="content-wrapper" style="padding-top: 60px;">
     <div class="container-fluid">
-        <div class="container" style="width: 400px; ">
+        <div class="container" style="width: 600px; ">
             <div class="page-header">
                 <h1>Add Details of the Applicant</h1>
             </div>
-            <form action="add_new_applicant_2.php" method="post">
+            <form action="../../includes/appicant_details_handler.php" method="post">
                 <div class="form-group">
                     <label for="first_name" class="left">First Name:</label>
                     <input type="text" class="form-control" name="first_name">
@@ -453,9 +453,33 @@ header("Location: ../index.php");
                         </select>
                     </div>
                 </div>
-
+                <label for="nationality"> Religion </label>
+                <div class="dropdown" id="religion">
+                    <select id="input_3" name="religion"  data-component="dropdown">
+                        <option value="Buddhist"> Buddhist </option>
+                        <option value="Christian"> Christian</option>
+                        <option value="Islam"> Islam </option>
+                        <option value="Hindu"> Hindu </option>
+                        <option value="Other"> Other </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nationality"> Grnder </label>
+                    <div class="dropdown" id="gender">
+                        <select id="input_3" name="gender"  data-component="dropdown">
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female</option>
+                            <option value="Other"> Other </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="guardian_nic" >Guardian NIC no:</label>
+                    <input type="number" class="form-control" name="guardian_nic" >
+                </div>
                 <div></div>
-                <button type="next" class="btn btn-default">Next</button>
+                <button type="Submit" class="btn btn-default">Next</button>
+        </div>
             </form>
         </div>
     </div>

@@ -5,14 +5,14 @@
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
 
     <link rel = "stylesheet"
           type = "text/css"
-<!--          href = "../stylesheets/myStyle.css" />-->
+    <!--          href = "../stylesheets/myStyle.css" />-->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../public/stylesheets/sb-admin.min.css">
+    <link rel="stylesheet" href="../../public/stylesheets/sb-admin.min.css">
 </head>
 
 
@@ -45,7 +45,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="school_clerk.php">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                 </a>
@@ -239,13 +239,22 @@
     </div>
 </nav>
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="padding-top: 60px;">
     <div class="container-fluid">
-
+        <div class="container" style="width: 600px; ">
+            <div class="page-header">
+                <h1>Add Details of the Applicant</h1>
+            </div>
+            <form action="../../includes/appicant_details_handler.php" method="post">
+                <div class="form-group">
+                </div>
+            </form>
         </div>
     </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
+    </div>
+</div>
+<!-- /.container-fluid-->
+<!-- /.content-wrapper-->
 
 </body>
 </html>
