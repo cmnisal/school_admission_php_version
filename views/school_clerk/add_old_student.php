@@ -2,7 +2,7 @@
 //session_regenerate_id();
 if(!isset($_SESSION['login_user']))      // if there is no valid session
 {
-header("Location: ../index.php");
+    header("Location: ../index.php");
 }
 ?>
 <html>
@@ -12,7 +12,7 @@ header("Location: ../index.php");
         echo $_SESSION['login_user'];
         ?>
     </title>
-<!--    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">-->
+    <!--    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
     <link rel = "stylesheet"
           type = "text/css"
@@ -47,7 +47,7 @@ header("Location: ../index.php");
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="add_old_student.php">
+                <a class="nav-link" href="#">
                     <span class="nav-link-text">Add Old Student</span>
                 </a>
             </li>
@@ -140,6 +140,10 @@ header("Location: ../index.php");
                 <h1>Add Details of the Applicant</h1>
             </div>
             <form action="../../includes/appicant_details_handler.php" method="post">
+                <div class="form-group">
+                    <label for="old_student_id" class="left">Old Student ID:</label>
+                    <input type="number" class="form-control" name="old_student_id">
+                </div>
                 <div class="form-group">
                     <label for="first_name" class="left">First Name:</label>
                     <input type="text" class="form-control" name="first_name">
@@ -388,9 +392,9 @@ header("Location: ../index.php");
                 <div></div>
                 <button type="Submit" class="btn btn-default">Submit</button>
         </div>
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 </div>
 <!-- /.container-fluid-->
 <!-- /.content-wrapper-->
