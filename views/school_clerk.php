@@ -6,6 +6,7 @@
         ?>
     </title>
     <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+
     <link rel = "stylesheet"
           type = "text/css"
 <!--          href = "../stylesheets/myStyle.css" />-->

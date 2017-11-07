@@ -12,13 +12,14 @@ header("Location: ../index.php");
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">-->
+    <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
     <link rel = "stylesheet"
           type = "text/css"
     <!--          href = "../stylesheets/myStyle.css" />-->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../public/stylesheets/sb-admin.min.css">
+    <link rel="stylesheet" href="../../public/stylesheets/sb-admin.min.css">
 </head>
 <body>
 

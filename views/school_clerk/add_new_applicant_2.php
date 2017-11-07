@@ -24,7 +24,7 @@ if(!isset($_SESSION['login_user']))      // if there is no valid session
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/stylesheets/sb-admin.min.css">
     <link rel = "stylesheet" type = "text/css" href = "../../public/stylesheets/myStyle.css" />
     <link rel = "stylesheet" type = "text/css" href = "../../public/xel/stylesheets/material.theme.css" />
 </head>
