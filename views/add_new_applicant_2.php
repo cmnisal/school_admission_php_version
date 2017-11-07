@@ -1,5 +1,5 @@
 <?php
-require "includes/config.php";
+require "../includes/config.php";
 //finally, let's store our posted values in the session variables
 session_start();
 
