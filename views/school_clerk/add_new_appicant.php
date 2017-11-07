@@ -2,7 +2,7 @@
 //session_regenerate_id();
 if(!isset($_SESSION['login_user']))      // if there is no valid session
 {
-header("Location: ../index.php");
+header("Location: ../../index.php");
 }
 ?>
 <html>
@@ -12,7 +12,7 @@ header("Location: ../index.php");
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel = "stylesheet"
           type = "text/css"
           href = "../stylesheets/myStyle.css" />
@@ -31,7 +31,7 @@ header("Location: ../index.php");
             <li><a href="#">Page 2</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../includes/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li><a href="../../includes/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>
 </nav>

@@ -3,7 +3,7 @@ include('session.php');
 if(!isset($_SESSION['logged_in'])) {
     header("Location: ../index.php");
 }else{
-    header("Location: ../views/school_clerk.php");
+    header("Location: ../views/school_clerk/school_clerk.php");
 }
 
 ?>

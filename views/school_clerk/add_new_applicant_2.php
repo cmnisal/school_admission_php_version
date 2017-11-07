@@ -1,5 +1,5 @@
 <?php
-require "../includes/config.php";
+require "../../includes/config.php";
 //finally, let's store our posted values in the session variables
 session_start();
 
@@ -24,9 +24,9 @@ if(!isset($_SESSION['login_user']))      // if there is no valid session
         echo $_SESSION['login_user'];
         ?>
     </title>
-    <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel = "stylesheet" type = "text/css" href = "../public/stylesheets/myStyle.css" />
-    <link rel = "stylesheet" type = "text/css" href = "../public/xel/stylesheets/material.theme.css" />
+    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "../../public/stylesheets/myStyle.css" />
+    <link rel = "stylesheet" type = "text/css" href = "../../public/xel/stylesheets/material.theme.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -40,12 +40,12 @@ if(!isset($_SESSION['login_user']))      // if there is no valid session
             <li><a href="#">Page 2</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../includes/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li><a href="../../includes/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>
 </nav>
 <div class="container">
-<form action="../includes/appicant_details_handler.php" method="post">
+<form action="../../includes/appicant_details_handler.php" method="post">
     <div class="form-group">
         <label for="nationality"> Religion </label>
         <div class="dropdown" id="religion">
@@ -77,8 +77,8 @@ if(!isset($_SESSION['login_user']))      // if there is no valid session
 </form>
 </div>
 
-<script src="../vendor/components/jquery/jquery.min.js"></script>
+<script src="../../vendor/components/jquery/jquery.min.js"></script>
 <script src="./.public/xel/xel.min.js" ></script>
-<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
