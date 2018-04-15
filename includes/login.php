@@ -26,8 +26,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location: includes/welcome.php");
     }else {
         $error = "Your Login Name or Password is invalid";
-        echo "<script type='text/javascript'>alert(\"$error\");</script>";
-        header("location:../index.php");
+        echo "<script type='text/javascript'>alert(\"$error\");window.location='../views/login.php';</script>";
+        //header("location:../index.html");
     }
 }
 ?>
