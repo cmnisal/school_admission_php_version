@@ -1,9 +1,13 @@
 <?php
 include('session.php');
-if(!isset($_SESSION['logged_in'])) {
-    header("Location: ../index.php");
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    header("Location: ../views/login.php");
 }else{
-    header("Location: ../views/school_clerk/school_clerk.php");
+    if($_SESSION['role']==='admin'){
+        header("Location: ../views/admin/admin_home.php");
+    }else if($_SESSION['role']==='user'){
+        header("Location: ../views/user/user_home.php");
+    }
 }
 
 ?>
