@@ -32,7 +32,7 @@ if(!isset($_SESSION['login_user']))      // if there is no valid session
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="school_clerk.php">
+                <a class="nav-link" href="user_home.php">
                     <span class="nav-link-text">Home</span>
                 </a>
             </li>
