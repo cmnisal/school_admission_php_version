@@ -1,10 +1,3 @@
-<?php session_start();
-//session_regenerate_id();
-if(!isset($_SESSION['login_user']))      // if there is no valid session
-{
-header("Location: ../index.php");
-}
-?>
 <html>
 <head>
     <title><?php
@@ -12,8 +5,8 @@ header("Location: ../index.php");
         echo $_SESSION['login_user'];
         ?>
     </title>
-<!--    <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
+
     <link rel = "stylesheet"
           type = "text/css"
     <!--          href = "../stylesheets/myStyle.css" />-->
@@ -23,6 +16,24 @@ header("Location: ../index.php");
     <link rel="stylesheet" href="../../public/stylesheets/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
+
+<!--
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">School Admissions</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="add_new_appicant.php">Add New Applicant</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="../includes/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+-->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">School Admissions</a>
@@ -37,20 +48,27 @@ header("Location: ../index.php");
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="add_new_appicant.php">
+                <a class="nav-link" href="add_new_store.php">
                     <span class="nav-link-text">Add new Applicant</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="add_new_guardian.php">
+                <a class="nav-link" href="add_new_offer.php">
                     <span class="nav-link-text">Add New Guardian</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="add_old_student.php">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link" href="add_old_student.php" >
                     <span class="nav-link-text">Add Old Student</span>
                 </a>
-            </li>
+              <!--  <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <li>
+                        <a href="navbar.html">Navbar</a>
+                    </li>
+                    <li>
+                        <a href="cards.html">Cards</a>
+                    </li>
+                </ul>-->
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link" href="#collapseExamplePages" >
                     <span class="nav-link-text">Example Pages</span>
@@ -137,9 +155,13 @@ header("Location: ../index.php");
     <div class="container-fluid">
         <div class="container" style="width: 600px; ">
             <div class="page-header">
-                <h1>Add Details of the Applicant</h1>
+                <h1>Add Details of the Guardian</h1>
             </div>
-            <form action="../../includes/appicant_details_handler.php" method="post">
+            <form action="../../includes/guardian_details_handler.php" method="post">
+                <div class="form-group">
+                    <label for="guardian_nic" class="left">NIC No:</label>
+                    <input type="number" class="form-control" name="guardian_nic">
+                </div>
                 <div class="form-group">
                     <label for="first_name" class="left">First Name:</label>
                     <input type="text" class="form-control" name="first_name">
@@ -361,7 +383,7 @@ header("Location: ../index.php");
                         </select>
                     </div>
                 </div>
-                <label for="nationality"> Religion </label>
+                <label for="religion"> Religion </label>
                 <div class="dropdown" id="religion">
                     <select id="input_3" name="religion"  data-component="dropdown">
                         <option value="Buddhist"> Buddhist </option>
@@ -382,21 +404,59 @@ header("Location: ../index.php");
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="guardian_nic" >Guardian NIC no:</label>
-                    <input type="number" class="form-control" name="guardian_nic" >
+                    <label for="home_number" class="left">Home No:</label>
+                    <input type="number" class="form-control" name="home_number">
                 </div>
-                <div></div>
+                <div class="form-group">
+                    <label for="street" class="left">Street:</label>
+                    <input type="text" class="form-control" name="street">
+                </div>
+                <div class="form-group">
+                    <label for="town" class="left">Town:</label>
+                    <input type="text" class="form-control" name="town">
+                </div>
+                <div class="form-group">
+                    <label for="city" class="left">City:</label>
+                    <input type="text" class="form-control" name="city">
+                </div>
+                <div class="form-group">
+                    <label for="district" class="left">District:</label>
+                    <input type="text" class="form-control" name="district">
+                </div>
+                <div class="form-group">
+                    <label for="province" class="left">Province:</label>
+                    <input type="text" class="form-control" name="province">
+                </div>
+                <div class="form-group">
+                    <label for="divisional_secretary_area" class="left">Divisional Secretary Area:</label>
+                    <input type="text" class="form-control" name="divisional_secretary_area">
+                </div>
+                <div class="form-group">
+                    <label for="grama_niladhari_division" class="left">Grama Niladhari Division:</label>
+                    <input type="text" class="form-control" name="grama_niladhari_division">
+                </div>
+                <div class="form-group">
+                    <label for="occupation" class="left">Occupation:</label>
+                    <input type="text" class="form-control" name="occupation">
+                </div>
+                <label for="civil_status">Civil Status </label>
+                <div class="dropdown" id="civil_status">
+                    <select id="civil_status" name="civil_status"  data-component="dropdown">
+                        <option value="married">Married </option>
+                        <option value="unmarried">unmarried</option>
+                    </select>
+                </div>
                 <button type="Submit" class="btn btn-default">Submit</button>
-        </div>
             </form>
         </div>
     </div>
 </div>
+
 <!-- /.container-fluid-->
 <!-- /.content-wrapper-->
 
-
-
+<script src="../../Javascript/sb-admin.min.js" ></script>
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
