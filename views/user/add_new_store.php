@@ -35,37 +35,38 @@ include ('sidebar_user.php');
             <div class="page-header">
                 <h1>Add Details of the Store</h1>
             </div>
-            <form action="../../includes/appicant_details_handler.php" method="post" style="width: 600px;">
+            <form style="width: 600px;">
                 <div class="form-group">
                     <label for="store_name" class="left">Store Name:</label>
-                    <input type="text" class="form-control" name="store_name">
+                    <input id='store_name' type="text" class="form-control" name="store_name">
                 </div>
                 <div class="form-group">
                     <label for="type"> Type </label>
-                    <div class="dropdown" id="gender">
-                        <select id="gender" name="gender"  data-component="dropdown">
+                    <div class="dropdown" >
+                        <select id="type" name="type"  data-component="dropdown">
                             <option value="service_center"> Service Centre </option>
                             <option value="store">Spare Part Store</option>
+                            <option value="tyre_service_center">Tyre Service Center</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address_line_1">Addre Line 1:</label>
-                    <input type="text" class="form-control" name="address_line_1">
+                    <label for="address_line_1">Address Line 1:</label>
+                    <input id='address_line_1' type="text" class="form-control" name="address_line_1">
                 </div>
                 <div class="form-group">
                     <label for="address_line_2">Address Line 2:</label>
-                    <input type="text" class="form-control" name="address_line_2">
+                    <input id='address_line_2' type="text" class="form-control" name="address_line_2">
                 </div>
                 <div class="form-group">
                     <label for="address_line_3">Address Line 3:</label>
-                    <input type="text" class="form-control" name="address_line_3">
+                    <input id='address_line_3' type="text" class="form-control" name="address_line_3">
                 </div>
                 <div class="form-group">
                     <label for="map">Select Location on map:</label>
                     <div id="map" height="460px" width="500px"></div>
                 </div>
-                <button type="Submit" class="btn btn-default">Submit</button>
+                <button class="btn btn-default" onclick='saveData()'>Submit</button>
         </div>
             </form>
         </div>
@@ -115,12 +116,14 @@ include ('sidebar_user.php');
     }
 
     function saveData() {
-        var name = escape(document.getElementById('name').value);
-        var address = escape(document.getElementById('address').value);
+        var store_name = escape(document.getElementById('store_name').value);
+        var address_line1 = escape(document.getElementById('address_line_1').value);
+        var address_line2 = escape(document.getElementById('address_line_2').value);
+        var address_line3 = escape(document.getElementById('address_line_3').value);
         var type = document.getElementById('type').value;
         var latlng = marker.getPosition();
-        var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
-            '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+        var url = '../../includes/add_store.php?store_name=' + store_name + '&address_line_1=' + address_line1 + '&address_line_2=' + address_line2 +
+            '&address_line_3=' + address_line3 +'&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
 
         downloadUrl(url, function(data, responseCode) {
 

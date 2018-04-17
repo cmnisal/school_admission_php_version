@@ -7,7 +7,7 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-            height: 25%;
+            height: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-<div id="map" height="460px" width="500px"></div>
+<div id="map" height="460px" width="100%"></div>
 <div id="form">
     <table>
         <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
@@ -53,8 +53,10 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-            placeMarker(event.latLng);
-
+            marker = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
 
 
             google.maps.event.addListener(marker, 'click', function() {
@@ -62,23 +64,13 @@
             });
         });
     }
-    function placeMarker(location) {
-        if ( marker ) {
-            marker.setPosition(location);
-        } else {
-            marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
-    }
 
     function saveData() {
         var name = escape(document.getElementById('name').value);
         var address = escape(document.getElementById('address').value);
         var type = document.getElementById('type').value;
         var latlng = marker.getPosition();
-        var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
+        var url = '../../includes/add_store.php?name=' + name + '&address=' + address +
             '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
 
         downloadUrl(url, function(data, responseCode) {
