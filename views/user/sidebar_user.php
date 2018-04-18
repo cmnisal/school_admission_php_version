@@ -20,11 +20,7 @@
                     <span class="nav-link-text">Add Offer</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="test_map.php">
-                    <span class="nav-link-text">Test Map</span>
-                </a>
-            </li>
+
         </ul>
         <ul class="navbar-nav sidenav-toggler" style="height: 80px;">
             <li class="nav-item">

@@ -44,7 +44,7 @@ include ('sidebar_user.php');
                     <label for="type"> Type </label>
                     <div class="dropdown" >
                         <select id="type" name="type"  data-component="dropdown">
-                            <option value="Service center"> Service Centre </option>
+                            <option value="Service Center"> Service Center </option>
                             <option value="Spare Part Store">Spare Part Store</option>
                             <option value="Tyre Service_Center">Tyre Service Center</option>
                         </select>
@@ -136,7 +136,7 @@ include ('sidebar_user.php');
         }else{
             var latlng = marker.getPosition();
             var url = '../../includes/add_store.php?store_name=' + store_name + '&address_line_1=' + address_line1 + '&address_line_2=' + address_line2 +
-                '&address_line_3=' + address_line3 +'&type=' + type+'&telephone_no=' + telephone_no + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+                '&address_line_3=' + address_line3 +'&type='+type+'&telephone_no=' + telephone_no + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
             downloadUrl(url, function(data, responseCode) {
 
                 if (responseCode == 200 && data.length <= 1) {

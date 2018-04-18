@@ -38,8 +38,8 @@ $telephone= $_GET['telephone_no'];
 $result = mysqli_query($query);*/
 
 $sql =sprintf( "INSERT INTO stores " .
-    " (id,user,name,add_1,add_2,add_3,type,lat,lng,approved,telephone) " .
-    " VALUES (NULL,'%s', '%s', '%s', '%s', '%s','%s','%s','%s','FALSE','%s');",
+    " (id,user,name,add_1,add_2,add_3,type,lat,lng,approved,telephone,rejected) " .
+    " VALUES (NULL,'%s', '%s', '%s', '%s', '%s','%s','%s','%s','FALSE','%s','FALSE');",
     mysqli_real_escape_string($db,$user),
     mysqli_real_escape_string($db,$store_name),
     mysqli_real_escape_string($db,$add_1),
