@@ -44,9 +44,9 @@ include ('sidebar_user.php');
                     <label for="type"> Type </label>
                     <div class="dropdown" >
                         <select id="type" name="type"  data-component="dropdown">
-                            <option value="service_center"> Service Centre </option>
-                            <option value="store">Spare Part Store</option>
-                            <option value="tyre_service_center">Tyre Service Center</option>
+                            <option value="Service center"> Service Centre </option>
+                            <option value="Spare Part Store">Spare Part Store</option>
+                            <option value="Tyre Service_Center">Tyre Service Center</option>
                         </select>
                     </div>
                 </div>
@@ -61,6 +61,10 @@ include ('sidebar_user.php');
                 <div class="form-group">
                     <label for="address_line_3">Address Line 3:</label>
                     <input id='address_line_3' type="text" class="form-control" name="address_line_3">
+                </div>
+                <div class="form-group">
+                    <label for="telephone_no">Telephone NO:</label>
+                    <input id='telephone_no' type="number" class="form-control" name="telephone_no" maxlength="10">
                 </div>
                 <div class="form-group">
                     <label for="map">Select Location on map:</label>
@@ -121,17 +125,28 @@ include ('sidebar_user.php');
         var address_line2 = escape(document.getElementById('address_line_2').value);
         var address_line3 = escape(document.getElementById('address_line_3').value);
         var type = document.getElementById('type').value;
-        var latlng = marker.getPosition();
-        var url = '../../includes/add_store.php?store_name=' + store_name + '&address_line_1=' + address_line1 + '&address_line_2=' + address_line2 +
-            '&address_line_3=' + address_line3 +'&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+        var telephone_no = escape(document.getElementById('telephone_no').value);
 
-        downloadUrl(url, function(data, responseCode) {
+        if(store_name==""){
+            alert('Enter a Storename');
+        }else if(address_line1=="" && address_line2=="" && address_line3==""){
+            alert('Enter a address correctly');
+        }else if(marker==null){
+            alert("select a location");
+        }else{
+            var latlng = marker.getPosition();
+            var url = '../../includes/add_store.php?store_name=' + store_name + '&address_line_1=' + address_line1 + '&address_line_2=' + address_line2 +
+                '&address_line_3=' + address_line3 +'&type=' + type+'&telephone_no=' + telephone_no + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+            downloadUrl(url, function(data, responseCode) {
 
-            if (responseCode == 200 && data.length <= 1) {
-                infowindow.close();
-                messagewindow.open(map, marker);
-            }
-        });
+                if (responseCode == 200 && data.length <= 1) {
+                    infowindow.close();
+                    messagewindow.open(map, marker);
+                }
+            });
+        }
+
+
     }
 
     function downloadUrl(url, callback) {
