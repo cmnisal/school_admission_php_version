@@ -1,7 +1,7 @@
 <?php
 include('session.php');
-if(!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-    header("Location: ../views/login.php");
+if(!isset($_SESSION['username'])) {
+    header("Location: ../views/login_view.php");
 }else{
     if($_SESSION['role']==='admin'){
         header("Location: ../views/admin/admin_home.php");

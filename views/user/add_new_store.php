@@ -38,21 +38,21 @@ include ('sidebar_user.php');
             <form style="width: 600px;">
                 <div class="form-group">
                     <label for="store_name" class="left">Store Name:</label>
-                    <input id='store_name' type="text" class="form-control" name="store_name">
+                    <input id='store_name' type="text" class="form-control" name="store_name" required>
                 </div>
                 <div class="form-group">
                     <label for="type"> Type </label>
                     <div class="dropdown" >
                         <select id="type" name="type"  data-component="dropdown">
-                            <option value="Service Center"> Service Center </option>
-                            <option value="Spare Part Store">Spare Part Store</option>
-                            <option value="Tyre Service_Center">Tyre Service Center</option>
+                            <option value="Service%20Center"> Service Center </option>
+                            <option value="Spare%20Part%20Store">Spare Part Store</option>
+                            <option value="Tyre%20Service%20Center">Tyre Service Center</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address_line_1">Address Line 1:</label>
-                    <input id='address_line_1' type="text" class="form-control" name="address_line_1">
+                    <input id='address_line_1' type="text" class="form-control" name="address_line_1" required>
                 </div>
                 <div class="form-group">
                     <label for="address_line_2">Address Line 2:</label>
@@ -64,13 +64,13 @@ include ('sidebar_user.php');
                 </div>
                 <div class="form-group">
                     <label for="telephone_no">Telephone NO:</label>
-                    <input id='telephone_no' type="number" class="form-control" name="telephone_no" maxlength="10">
+                    <input id='telephone_no' type="number" class="form-control" name="telephone_no" maxlength="10" required>
                 </div>
                 <div class="form-group">
                     <label for="map">Select Location on map:</label>
                     <div id="map" height="460px" width="500px"></div>
                 </div>
-                <button class="btn btn-default" onclick='saveData()'>Submit</button>
+                <button class="btn btn-default" onclick='saveData()' type="submit">Submit</button>
         </div>
             </form>
         </div>
@@ -128,9 +128,9 @@ include ('sidebar_user.php');
         var telephone_no = escape(document.getElementById('telephone_no').value);
 
         if(store_name==""){
-            alert('Enter a Storename');
+            //alert('Enter a Storename');
         }else if(address_line1=="" && address_line2=="" && address_line3==""){
-            alert('Enter a address correctly');
+            //alert('Enter a address correctly');
         }else if(marker==null){
             alert("select a location");
         }else{
