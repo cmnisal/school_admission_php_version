@@ -53,6 +53,7 @@ include ('sidebar_user.php');
                     <th>Offer Id</th>
                     <th>Offer Title</th>
                     <th>Description</th>
+                    <th></th>
                     </thead>
                     </tr>";
 
@@ -63,7 +64,7 @@ include ('sidebar_user.php');
                             echo "<td>" . $row['title'] . "</td>";
                             echo "<td>" . $row['details'] . "</td>";
                             //echo "<td>" ."<button class=\"btn btn-default\" style='background-color: green;' onclick='approve(".$row['id'].")'>Approve</button>". "</td>";
-                            echo "<td>" ."<button class=\"btn btn-default\" style='background-color: red;'onclick='reject(".$row['offer_id'].")'>Delete</button>". "</td>";
+                            echo "<td>" ."<button class=\"btn btn-default\" style='background-color: red;' onclick='rej(".$row['offer_id'].")'>Delete</button>". "</td>";
                             echo "</tr>";
                         }
                         echo "</table>";
@@ -78,6 +79,40 @@ include ('sidebar_user.php');
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+
+    function rej(id) {
+        alert(id);
+        var url = '../../includes/delete_offer.php?&id=' + id;
+        downloadUrl(url, function (data, responseCode) {
+
+            if (responseCode == 200 && data.length <= 1) {
+            }
+        });
+        alert("Delete Success!!");
+        window.location = 'approve_store.php';
+    }
+    function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                request.onreadystatechange = doNothing;
+                callback(request.responseText, request.status);
+            }
+        };
+
+
+
+        request.open('GET', url, true);
+        request.send(null);
+    }
+    function doNothing () {
+    }
+</script>
 
 </body>
 </html>

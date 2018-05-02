@@ -56,7 +56,7 @@ echo 'test';
                 echo "<td>" . $row['type'] . "</td>";
                 echo "<td>" ."<a href='#map'><button class=\"btn btn-default\" onclick='initMap(".$row['lat'].",".$row['lng'].")'>Show Location</button>". "</td></a>";
                 echo "<td>" ."<button class=\"btn btn-default\" style='background-color: green;' onclick='approve(".$row['id'].")'>Approve</button>". "</td>";
-                echo "<td>" ."<button class=\"btn btn-default\" style='background-color: red;'onclick='reject(".$row['id'].")'>Reject</button>". "</td>";
+                echo "<td>" ."<button class=\"btn btn-default\" style='background-color: red;' onclick='reject(".$row['id'].")'>Reject</button>". "</td>";
                 echo "</tr>";
             }
             echo "</table>";
