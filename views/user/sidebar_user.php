@@ -21,6 +21,11 @@
                 </a>
             </li>
 
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="view_offers.php">
+                    <span class="nav-link-text">View Offers</span>
+                </a>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler" style="height: 80px;">
             <li class="nav-item">
