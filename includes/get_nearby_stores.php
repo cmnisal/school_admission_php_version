@@ -7,7 +7,7 @@ $query="SELECT *, ( 6371 * acos( cos( radians(" . $lat . ") ) *
         cos( radians( lat ) ) * cos( radians( lng ) - radians(" . $lng . ") ) + sin( radians(" . $lat . ") ) *
         sin( radians( lat ) ) ) ) AS distance FROM public_stores HAVING distance < 100 and  type='".$category."';";
 $result = mysqli_query($db,$query);
-echo $query;
+//echo $query;
 $data = array();
 $data['results']=array();
 while($enr = mysqli_fetch_assoc($result)){
