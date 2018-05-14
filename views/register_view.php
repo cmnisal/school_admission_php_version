@@ -31,7 +31,7 @@
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Login">
         </div>
-        <p>Have an account? <a href="register.php">Sign up now</a>.</p>
+        <p>Have an account? <a href="login_view.php">Sign up now</a>.</p>
     </form>
 </div>
 </body>

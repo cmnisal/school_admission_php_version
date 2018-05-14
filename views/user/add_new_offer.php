@@ -6,13 +6,13 @@
         Add new offers
     </title>
     <?php
-    include ('header.php');
+    include('header.php');
     ?>
 </head>
 <body>
 
 <?php
-include ('sidebar_user.php');
+include('sidebar_user.php');
 ?>
 
 <div class="content-wrapper" style="padding-top: 60px;">

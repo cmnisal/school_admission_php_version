@@ -7,7 +7,7 @@
         Add new store
     </title>
     <?php
-    include ('header.php');
+    include('header.php');
     ?>
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -26,7 +26,7 @@
 <body>
 
 <?php
-include ('sidebar_user.php');
+include('sidebar_user.php');
 ?>
 
 <div class="content-wrapper" style="padding-top: 60px;">
@@ -144,6 +144,8 @@ include ('sidebar_user.php');
                     messagewindow.open(map, marker);
                 }
             });
+            alert("Successfully added the store!!");
+            window.location = 'add_new_store.php';
         }
 
 

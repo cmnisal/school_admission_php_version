@@ -24,7 +24,7 @@
 </head>
 <body>
 <?php
-include ('sidebar_admin.php');
+include('sidebar_admin.php');
 echo 'test';
 ?>
 <div class="content-wrapper">

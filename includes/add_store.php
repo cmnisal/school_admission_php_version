@@ -59,10 +59,10 @@ if($stmt = $db->prepare($sql)){
     // Attempt to execute the prepared statement
     if($stmt->execute()){
         // Redirect to login page
-        echo $sql;
+       // echo $sql;
     } else{
         //echo "<script type='text/javascript'>alert('error');window.location='../views/admin/add_new_admin.php';</script>";;
-        echo $sql;
+       // echo $sql;
     }
 }
 

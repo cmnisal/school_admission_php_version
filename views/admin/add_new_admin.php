@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-include ('sidebar_admin.php');
+include('sidebar_admin.php');
 ?>
 <div class="content-wrapper">
     <div class="container-fluid">

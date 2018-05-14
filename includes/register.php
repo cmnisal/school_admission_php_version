@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location:../views/login_view.php");
+                header("location:../public/views/login_view.php");
             } else{
                 echo "<script type='text/javascript'>alert('Error');window.location='../views/register_view.php';</script>";;
             }
