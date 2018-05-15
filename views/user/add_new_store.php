@@ -137,6 +137,7 @@ include('sidebar_user.php');
             var latlng = marker.getPosition();
             var url = '../../includes/add_store.php?store_name=' + store_name + '&address_line_1=' + address_line1 + '&address_line_2=' + address_line2 +
                 '&address_line_3=' + address_line3 +'&type='+type+'&telephone_no=' + telephone_no + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+           
             downloadUrl(url, function(data, responseCode) {
 
                 if (responseCode == 200 && data.length <= 1) {
